@@ -197,7 +197,7 @@
         <p class="footer-copy">&copy; 2026 El-Shaddai Bakery and Confectioners. All rights reserved.</p>
     </footer>
 
-    <!-- LOGIC SCRIPTS -->
+        <!-- LOGIC SCRIPTS -->
     <script>
         function sendWhatsAppOrder(event) {
             event.preventDefault();
@@ -217,6 +217,7 @@
                             `🍰 *Flavor:* ${chosenFlavor}\n` +
                             `📝 *Details:* ${designDetails}`;
 
+            // THIS IS THE EXACT LINE YOU ARE UPDATING WITH YOUR NUMBER:
             const whatsappUrl = "https://wa.me" + encodeURIComponent(message);
             window.location.href = whatsappUrl;
         }
@@ -230,5 +231,6 @@
             });
         }
     </script>
+
 </body>
 </html>
