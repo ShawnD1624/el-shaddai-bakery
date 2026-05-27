@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Custom Orders - El-Shaddai Bakery</title>
-    <!-- Links perfectly into your centralized style configurations -->
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Specific Page Layout Overrides */
         .form-page-container {
             padding: 60px 5% 80px 5%;
             display: flex;
@@ -100,7 +98,6 @@
             transform: translateY(-1px);
         }
 
-        /* Direct Help Prompt Area */
         .direct-contact-prompt {
             margin-top: 35px;
             text-align: center;
@@ -121,10 +118,9 @@
     <header class="navbar">
         <div class="logo-brand">El-Shaddai</div>
         
-        <!-- Hamburger Toggle Component for Mobile -->
         <button class="menu-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation">
             <span></span>
-            <span><span></span></span>
+            <span></span>
             <span></span>
         </button>
 
@@ -163,8 +159,9 @@
                         <input type="date" id="date" required>
                     </div>
                     <div class="form-group">
-                        <label for="servings">Estimated Guest Count (Servings)</label>
-                        <input type="number" id="servings" placeholder="e.g., 25" min="5" required>
+                        <label for="servings">Estimated Guest Count / Servings</label>
+                        <!-- FIXED: Minimum constraint changed to 1, default value set to 1 -->
+                        <input type="number" id="servings" placeholder="e.g., 1" value="1" min="1" required>
                     </div>
                 </div>
 
@@ -189,22 +186,19 @@
             </form>
         </div>
 
-        <!-- Direct Contact Fallback Section -->
         <div class="direct-contact-prompt">
             <h4 style="margin-bottom: 8px; font-size: 18px;">Need something else?</h4>
             <p style="font-size: 15px; color: #6e5541; line-height: 1.5;">For questions, special menu inquiries, or dietary accommodations, contact Elane directly at <strong>0836560293</strong>.</p>
         </div>
     </main>
 
-    <!-- Bottom Contact Footer Area -->
     <footer class="footer-bar">
         <p class="footer-contact">📞 Call Elane: <strong>0836560293</strong></p>
         <p class="footer-copy">&copy; 2026 El-Shaddai Bakery and Confectioners. All rights reserved.</p>
     </footer>
 
-    <!-- INTERACTIVE SCRIPTS MANIFEST -->
+    <!-- LOGIC SCRIPTS -->
     <script>
-        // 1. FREE WHATSAPP INQUIRY ROUTER
         function sendWhatsAppOrder(event) {
             event.preventDefault();
 
@@ -219,7 +213,7 @@
                             `👤 *Name:* ${clientName}\n` +
                             `📞 *Phone:* ${clientPhone}\n` +
                             `📅 *Date:* ${eventDate}\n` +
-                            `👥 *Servings:* ${guestCount} guests\n` +
+                            `👥 *Servings:* ${guestCount} item(s)\n` +
                             `🍰 *Flavor:* ${chosenFlavor}\n` +
                             `📝 *Details:* ${designDetails}`;
 
@@ -227,7 +221,6 @@
             window.location.href = whatsappUrl;
         }
 
-        // 2. MOBILE DRAWER TOGGLE FUNCTION
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navMenu = document.getElementById('navMenu');
 
