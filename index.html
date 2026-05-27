@@ -13,12 +13,16 @@
 </head>
 <body>
 
+    <!-- Direct Header Contact Ribbon -->
+    <div class="contact-ribbon">
+        <p>📞 Call Elane to Place an Order: <strong>0836560293</strong></p>
+    </div>
 
-    <!-- Updated Navigation Header Area -->
+    <!-- Main Navigation Header Bar -->
     <header class="navbar">
         <div class="logo-brand">El-Shaddai</div>
         
-        <!-- HAMBURGER TOGGLE COMPONENT: Add this block right here -->
+        <!-- HAMBURGER MENU BUTTON SYSTEM -->
         <button class="menu-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation">
             <span></span>
             <span></span>
@@ -26,8 +30,8 @@
         </button>
 
         <nav class="nav-menu" id="navMenu">
-            <a href="index.html" class="nav-link">Home</a>
-           <!-- <a href="#" class="nav-link">About Us</a> --> 
+            <a href="index.html" class="nav-link active">Home</a>
+            <!-- <a href="#" class="nav-link">About Us</a> --> 
            <!-- <a href="#" class="nav-link">Menu</a> --> 
             <a href="custom-orders.html" class="nav-link">Custom Orders</a>
             <a href="gallery.html" class="nav-link">Gallery</a>
@@ -41,10 +45,8 @@
             <h1 class="hero-title">El-Shaddai Bakery & Confectioners</h1>
             <p class="hero-subtitle">Heavenly Treats, Baked with Love.</p>
             <div class="hero-actions">
-                <!-- Action Link 1: Points directly to your creations grid page -->
                 <a href="gallery.html" class="hero-btn gallery-btn">View Our Creations</a>
-                <!-- Action Link 2: Pre-wired South African WhatsApp instance wrapper 
-                <a href="https://wa.me." target="_blank" class="hero-btn whatsapp-btn">💬 Chat via WhatsApp</a> -->
+                <!-- <a href="https://wa.me." target="_blank" class="hero-btn whatsapp-btn">💬 Chat via WhatsApp</a> -->
             </div>
         </div>
     </section>
@@ -55,7 +57,7 @@
         <div class="heading-divider"></div>
         
         <div class="showcase-grid">
-            <!-- Category Card 1: Decadent Pastries (Pulls your cupcakes file with correct extension mapping) -->
+            <!-- Category Card 1: Decadent Pastries -->
             <div class="showcase-card">
                 <div class="card-img-container">
                     <img src="./cupcakes.jpg.jpeg" alt="Decadent Cupcakes and Pastries" class="card-img">
@@ -66,12 +68,13 @@
                 </div>
             </div>
 
-            <!-- Category Card 2: Celebration Cakes (Pulls your anniversary cake asset file flawlessly) -->
+            <!-- Category Card 2: Celebration Cakes -->
             <div class="showcase-card">
                 <div class="card-img-container">
                     <img src="./anniversary-cake.jpg.jpeg" alt="Custom Celebration Cakes" class="card-img">
                 </div>
                 <div class="card-body">
+                    <h3 class="card-title">Celebration Cakes</h3>
                     <h3 class="card-title">Celebration Cakes</h3>
                     <p class="card-tagline">Custom Made to Order</p>
                 </div>
@@ -82,10 +85,22 @@
     <!-- Clean Informational Brand Footer Bar Layout -->
     <footer class="footer-bar">
         <div class="footer-content">
-            <p class="footer-contact">📞 Call: <strong>0836560293</strong></p>
+            <p class="footer-contact">📞 Call Elane: <strong>0836560293</strong></p>
             <p class="footer-copy">&copy; 2026 El-Shaddai Bakery and Confectioners. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- MOBILE ACCESSIBILITY CONTROLLER SCRIPT -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+
+        if (mobileMenuBtn && navMenu) {
+            mobileMenuBtn.addEventListener('click', function() {
+                navMenu.classList.toggle('mobile-open');
+            });
+        }
+    </script>
 
 </body>
 </html>
