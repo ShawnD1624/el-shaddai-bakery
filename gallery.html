@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Creations - El-Shaddai Bakery</title>
+    <!-- Connects seamlessly with your main layout script -->
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Portfolio Grid Overrides */
+        .gallery-container {
+            padding: 60px 8% 100px 8%;
+            text-align: center;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 40px auto 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 340px;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(74, 51, 33, 0.08);
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            background-color: #efeae2;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(131, 92, 60, 0.18);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.04);
+        }
+
+        /* Gradient card caption mask text */
+        .gallery-overlay-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 15px;
+            background: linear-gradient(to top, rgba(43, 29, 18, 0.85) 0%, rgba(0,0,0,0) 100%);
+            color: #ffffff;
+            text-align: left;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Updated Navigation Header Area -->
+    <header class="navbar">
+        <div class="logo-brand">El-Shaddai</div>
+        
+        <!-- HAMBURGER TOGGLE COMPONENT: Add this block right here -->
+        <button class="menu-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav-menu" id="navMenu">
+            <a href="index.html" class="nav-link">Home</a>
+            <!-- <a href="#" class="nav-link">About Us</a> --> 
+           <!-- <a href="#" class="nav-link">Menu</a> --> 
+            <a href="custom-orders.html" class="nav-link">Custom Orders</a>
+            <a href="gallery.html" class="nav-link">Gallery</a>
+        </nav>
+    </header>
+
+    <!-- Visual Portfolio Showcase Grid Frame -->
+    <main class="gallery-container">
+        <h2 class="showcase-heading">Our Baked Creations</h2>
+        <p style="font-style: italic; color: #835c3c;">Handcrafted luxury treats baked fresh with love</p>
+        <div class="heading-divider"></div>
+
+        <div class="gallery-grid">
+            
+            <!-- Item 1: Sweet 16 Tiered Rose Cake -->
+            <div class="gallery-item">
+                <img src="./pics/cake-sweet16.jpg.jpeg" alt="Sweet 16 Tiered Celebration Cake">
+                <div class="gallery-overlay-text">Two-Tier Sweet 16 Rose Cake</div>
+            </div>
+
+            <!-- Item 2: Elegant Wedding Cake -->
+            <div class="gallery-item">
+                <img src="./pics/cake-wedding.jpg.jpeg" alt="Elegant Tiered Wedding Cake with Gold Leaf">
+                <div class="gallery-overlay-text">Gold Leaf & Rose Wedding Cake</div>
+            </div>
+
+            <!-- Item 3: Luxury Pearl Celebration Cake -->
+            <div class="gallery-item">
+                <img src="./pics/cake-pearls.jpg.jpeg" alt="Elegant Pearl Religious Celebration Cake">
+                <div class="gallery-overlay-text">Elegant Gold Pearls & Rose Cake</div>
+            </div>
+
+            <!-- Item 4: Double Chocolate Drip Birthday Cake -->
+            <div class="gallery-item">
+                <img src="./pics/cake-chocolate.jpg.jpeg" alt="Double Chocolate Birthday Drip Cake">
+                <div class="gallery-overlay-text">Decadent Double Chocolate Drip</div>
+            </div>
+
+            <!-- Item 5: Pink Rosette Frosted Cupcakes -->
+            <div class="gallery-item">
+                <img src="./pics/cupcakes-pink.jpg.jpeg" alt="Gourmet Frosted Pink Cupcakes">
+                <div class="gallery-overlay-text">Luxury Pink Rosette Cupcakes</div>
+            </div>
+
+            <!-- Item 6: Chocolate Drip 50th Jubilee Sheet Cake -->
+            <div class="gallery-item">
+                <img src="./pics/cake-50th.jpg.jpeg.jpeg" alt="50th Anniversary Chocolate Drip Sheet Cake">
+                <div class="gallery-overlay-text">50th Jubilee Chocolate Drip Cake</div>
+            </div>
+
+            <!-- Item 7: SpongeBob SquarePants Themed Kids Birthday Cake -->
+            <div class="gallery-item">
+                <img src="./pics/cake-spongebob.jpg.jpeg" alt="SpongeBob Character Birthday Cake">
+                <div class="gallery-overlay-text">SpongeBob Character Cake</div>
+            </div>
+
+            <!-- Item 8: Minnie Mouse 1st Birthday Cake -->
+            <div class="gallery-item">
+                <img src="./pics/cake-minnie.jpg.jpeg" alt="Minnie Mouse Pink Polka Dot Birthday Cake">
+                <div class="gallery-overlay-text">Minnie Mouse 1st Birthday Cake</div>
+            </div>
+
+            <!-- Item 9: Graduation Celebration Cap Cake -->
+            <div class="gallery-item">
+                <img src="./pics/cake-graduation.jpg.jpeg" alt="Graduation Cap Academic Celebration Cake">
+                <div class="gallery-overlay-text">Academic Graduation Cap Cake</div>
+            </div>
+
+            <!-- Item 10: Cristiano Ronaldo CR7 Soccer Birthday Cake -->
+            <div class="gallery-item">
+                <img src="./pics/cake-cr7.jpg.jpeg" alt="Cristiano Ronaldo CR7 Football Cake">
+                <div class="gallery-overlay-text">CR7 Football Birthday Cake</div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Informational Brand Footer Bar Layout -->
+    <footer class="footer-bar">
+        <p class="footer-contact">📞 Call: <strong>0836560293</strong></p>
+        <p class="footer-copy">&copy; 2026 El-Shaddai Bakery and Confectioners. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

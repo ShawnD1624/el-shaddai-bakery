@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El-Shaddai Bakery and Confectioners</title>
+    <!-- Connects seamlessly to your external style configurations -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Pulls elegant web typography -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+    <!-- Updated Navigation Header Area -->
+    <header class="navbar">
+        <div class="logo-brand">El-Shaddai</div>
+        
+        <!-- HAMBURGER TOGGLE COMPONENT: Add this block right here -->
+        <button class="menu-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav-menu" id="navMenu">
+            <a href="index.html" class="nav-link">Home</a>
+           <!-- <a href="#" class="nav-link">About Us</a> --> 
+           <!-- <a href="#" class="nav-link">Menu</a> --> 
+            <a href="custom-orders.html" class="nav-link">Custom Orders</a>
+            <a href="gallery.html" class="nav-link">Gallery</a>
+        </nav>
+    </header>
+
+    <!-- Visual Hero Section Banner Layout -->
+    <section class="hero-banner">
+        <div class="hero-overlay"></div>
+        <div class="hero-text-content">
+            <h1 class="hero-title">El-Shaddai Bakery & Confectioners</h1>
+            <p class="hero-subtitle">Heavenly Treats, Baked with Love.</p>
+            <div class="hero-actions">
+                <!-- Action Link 1: Points directly to your creations grid page -->
+                <a href="gallery.html" class="hero-btn gallery-btn">View Our Creations</a>
+                <!-- Action Link 2: Pre-wired South African WhatsApp instance wrapper 
+                <a href="https://wa.me." target="_blank" class="hero-btn whatsapp-btn">💬 Chat via WhatsApp</a> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Product Categories Showcase -->
+    <section class="showcase-section">
+        <h2 class="showcase-heading">Our Sweet Specialties</h2>
+        <div class="heading-divider"></div>
+        
+        <div class="showcase-grid">
+            <!-- Category Card 1: Decadent Pastries (Pulls your cupcakes file with correct extension mapping) -->
+            <div class="showcase-card">
+                <div class="card-img-container">
+                    <img src="./pics/cupcakes.jpg.jpeg" alt="Decadent Cupcakes and Pastries" class="card-img">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Decadent Pastries</h3>
+                    <p class="card-tagline">Freshly Baked Daily</p>
+                </div>
+            </div>
+
+            <!-- Category Card 2: Celebration Cakes (Pulls your anniversary cake asset file flawlessly) -->
+            <div class="showcase-card">
+                <div class="card-img-container">
+                    <img src="./anniversary-cake.jpg.jpeg" alt="Custom Celebration Cakes" class="card-img">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Celebration Cakes</h3>
+                    <p class="card-tagline">Custom Made to Order</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clean Informational Brand Footer Bar Layout -->
+    <footer class="footer-bar">
+        <div class="footer-content">
+            <p class="footer-contact">📞 Call: <strong>0836560293</strong></p>
+            <p class="footer-copy">&copy; 2026 El-Shaddai Bakery and Confectioners. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

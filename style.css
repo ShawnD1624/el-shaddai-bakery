@@ -1,0 +1,459 @@
+/* ==========================================================================
+   1. GLOBAL STYLE RESETS & WATERCOLOR BACKGROUND BASE
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)), 
+                url('./bakery-pattern.jpg.jpeg.png') no-repeat center center/cover fixed;
+    color: #4a3321;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden; /* Prevents awkward horizontal swiping on mobile smartphones */
+}
+
+/* ==========================================================================
+   2. HEADER, RIBBON & RESPONSIVE NAVIGATION STYLING
+   ========================================================================== */
+.contact-ribbon {
+    background-color: #835c3c;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 15px;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 100;
+    font-weight: 500;
+}
+
+.contact-ribbon strong {
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 8%;
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #efeae2;
+    position: relative;
+    z-index: 99;
+}
+
+.logo-brand {
+    font-size: 28px;
+    font-weight: 700;
+    color: #4a3321;
+    letter-spacing: -0.5px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #6e5541;
+    font-size: 15px;
+    font-weight: 600;
+    position: relative;
+    padding: 6px 0;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #835c3c;
+}
+
+/* Elegant underline accent hover animation for laptops */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #835c3c;
+    transition: width 0.3s ease;
+}
+.nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+}
+
+/* Hidden Mobile Menu Button (Hamburger) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 5px;
+}
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #4a3321;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   3. HERO BANNER DISPLAY (OPTIMIZED BREAKPOINTS)
+   ========================================================================== */
+.hero-banner {
+    position: relative;
+    height: 65vh;
+    min-height: 460px;
+    background: url('./bakery-bg.jpg.png') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.55));
+    z-index: 1;
+}
+
+.hero-text-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+    max-width: 750px;
+}
+
+.hero-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+    text-shadow: 0 3px 15px rgba(0,0,0,0.4);
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    color: #f5ece6;
+    margin-bottom: 32px;
+    font-weight: 400;
+    font-style: italic;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.hero-actions {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+.hero-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.gallery-btn { background-color: #fcfaf6; color: #4a3321; }
+.gallery-btn:hover { background-color: #835c3c; color: #ffffff; }
+
+.whatsapp-btn { background-color: #25D366; color: #ffffff; }
+.whatsapp-btn:hover { background-color: #128C7E; }
+
+/* ==========================================================================
+   4. SHOWCASE GRID SYSTEM (NEATENED LABELS)
+   ========================================================================== */
+.showcase-section, .form-page-container, .gallery-container {
+    padding: 60px 5% 80px 5%;
+    text-align: center;
+}
+
+.showcase-heading {
+    font-size: 32px;
+    color: #4a3321;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.heading-divider {
+    width: 50px;
+    height: 3px;
+    background-color: #835c3c;
+    margin: 0 auto 40px auto;
+    border-radius: 2px;
+}
+
+.showcase-grid, .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.showcase-card, .gallery-item {
+    background-color: #ffffff !important;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(74, 51, 33, 0.06) !important;
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s ease;
+    border: 1px solid rgba(239, 234, 226, 0.7);
+}
+.showcase-card:hover, .gallery-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(131, 92, 60, 0.14) !important;
+}
+
+.card-img-container, .gallery-item {
+    height: 320px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.card-img, .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.showcase-card:hover .card-img, .gallery-item:hover img {
+    transform: scale(1.03);
+}
+
+.card-body {
+    padding: 24px;
+    text-align: center; /* Neatens text alignment directly in the card center */
+}
+
+.card-title {
+    font-size: 22px;
+    color: #4a3321;
+    margin-bottom: 4px;
+}
+
+.card-tagline {
+    font-size: 13px;
+    color: #835c3c;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   5. CUSTOM ORDER FORM CONTAINER ADJUSTMENTS
+   ========================================================================== */
+.form-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.booking-container {
+    width: 100%;
+    max-width: 700px;
+    background-color: #ffffff !important;
+    padding: 35px 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(74, 51, 33, 0.06) !important;
+    margin-top: 20px;
+    border: 1px solid rgba(239, 234, 226, 0.7);
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    text-align: left;
+}
+
+.form-group-row {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.form-group-row .form-group {
+    flex: 1;
+    min-width: 220px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #4a3321;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    padding: 12px 14px;
+    border: 1px solid #efeae2;
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: #fcfaf6;
+    color: #4a3321;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: #835c3c;
+    box-shadow: 0 0 0 3px rgba(131, 92, 60, 0.1);
+}
+
+.submit-form-btn {
+    background-color: #4a3321;
+    color: #ffffff;
+    border: none;
+    padding: 15px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background-color 0.2s, transform 0.2s;
+    margin-top: 5px;
+}
+.submit-form-btn:hover {
+    background-color: #835c3c;
+    transform: translateY(-1px);
+}
+
+.direct-contact-prompt {
+    margin-top: 35px;
+    text-align: center;
+    max-width: 480px;
+    padding: 20px 10px;
+    border-top: 1px solid #efeae2;
+}
+
+/* ==========================================================================
+   6. BRAND FOOTER & MEDIA RESPONSIVENESS OVERRIDES
+   ========================================================================== */
+.footer-bar {
+    background-color: #2b1d12;
+    color: #efeae2;
+    text-align: center;
+    padding: 35px 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.footer-contact {
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.footer-copy {
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+/* 📱 SMARTPHONE RESPONSIVE BREAKPOINT GRID OVERRIDES */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 5%;
+    }
+    
+    /* Converts navigation bar links into an automated expandable block drop-down menu */
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .nav-menu {
+        display: none; /* Conceals links initially until toggle active helper executes */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        padding: 20px;
+        box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+        border-bottom: 1px solid #efeae2;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    /* JavaScript class helper injection point triggers mobile menu animation */
+    .nav-menu.mobile-open {
+        display: flex;
+    }
+    
+    .hero-banner {
+        height: auto;
+        padding: 80px 20px;
+    }
+    
+    .hero-title {
+        font-size: 30px;
+    }
+    
+    .hero-subtitle {
+        font-size: 17px;
+        margin-bottom: 24px;
+    }
+    
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+    
+    .hero-btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .showcase-heading {
+        font-size: 26px;
+    }
+    
+    .showcase-grid, .gallery-grid {
+        grid-template-columns: 1fr; /* Forces layout boxes into an easy vertical stacked line */
+        gap: 20px;
+    }
+    
+    .card-img-container, .gallery-item {
+        height: 260px; /* Lowers picture size layout constraints slightly for smartphone screens */
+    }
+}
