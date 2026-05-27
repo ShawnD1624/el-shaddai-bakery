@@ -91,6 +91,8 @@
             box-shadow: 0 4px 12px rgba(74, 51, 33, 0.15);
             transition: all 0.2s ease;
             margin-top: 5px;
+            text-align: center;
+            width: 100%;
         }
 
         .submit-form-btn:hover {
@@ -126,8 +128,8 @@
 
         <nav class="nav-menu" id="navMenu">
             <a href="index.html" class="nav-link">Home</a>
-            <!-- <a href="#" class="nav-link">About Us</a> --> 
-           <!-- <a href="#" class="nav-link">Menu</a> --> 
+            <a href="#" class="nav-link">About Us</a>
+            <a href="#" class="nav-link">Menu</a>
             <a href="custom-orders.html" class="nav-link active">Custom Orders</a>
             <a href="gallery.html" class="nav-link">Gallery</a>
         </nav>
@@ -140,7 +142,7 @@
         <div class="heading-divider"></div>
 
         <div class="booking-container">
-            <form id="cakeForm" class="booking-form" onsubmit="sendWhatsAppOrder(event)">
+            <div class="booking-form">
                 
                 <div class="form-group-row">
                     <div class="form-group">
@@ -160,7 +162,6 @@
                     </div>
                     <div class="form-group">
                         <label for="servings">Estimated Guest Count / Servings</label>
-                        <!-- FIXED: Minimum constraint changed to 1, default value set to 1 -->
                         <input type="number" id="servings" placeholder="e.g., 1" value="1" min="1" required>
                     </div>
                 </div>
@@ -182,8 +183,9 @@
                     <textarea id="details" rows="5" placeholder="Describe your dream design, colors, or any allergies..." required></textarea>
                 </div>
 
-                <button type="submit" class="submit-form-btn">Submit Inquiry via WhatsApp</button>
-            </form>
+                <!-- Changed to a plain button component with a direct onclick trigger -->
+                <button type="button" class="submit-form-btn" onclick="sendWhatsAppOrder()">Submit Inquiry via WhatsApp</button>
+            </div>
         </div>
 
         <div class="direct-contact-prompt">
@@ -197,11 +199,10 @@
         <p class="footer-copy">&copy; 2026 El-Shaddai Bakery and Confectioners. All rights reserved.</p>
     </footer>
 
-        <!-- LOGIC SCRIPTS -->
+    <!-- LOGIC SCRIPTS -->
     <script>
-        function sendWhatsAppOrder(event) {
-            event.preventDefault();
-
+        function sendWhatsAppOrder() {
+            // Read inputs directly from the fields
             const clientName = document.getElementById('name').value;
             const clientPhone = document.getElementById('phone').value;
             const eventDate = document.getElementById('date').value;
@@ -209,19 +210,29 @@
             const chosenFlavor = document.getElementById('flavor').value;
             const designDetails = document.getElementById('details').value;
 
-            const message = `🎂 *New El-Shaddai Custom Cake Inquiry* 🎂\n\n` +
-                            `👤 *Name:* ${clientName}\n` +
-                            `📞 *Phone:* ${clientPhone}\n` +
-                            `📅 *Date:* ${eventDate}\n` +
-                            `👥 *Servings:* ${guestCount} item(s)\n` +
-                            `🍰 *Flavor:* ${chosenFlavor}\n` +
-                            `📝 *Details:* ${designDetails}`;
+            // Simple validation check to ensure they don't send a blank box
+            if (!clientName || !clientPhone) {
+                alert("Please fill in your Name and Contact Number first!");
+                return;
+            }
 
-            // THIS IS THE EXACT LINE YOU ARE UPDATING WITH YOUR NUMBER:
+            // Create a clean, unspaced message template string
+            const message = "🎂 *New El-Shaddai Custom Cake Inquiry* 🎂\n\n" +
+                            "👤 *Name:* " + clientName + "\n" +
+                            "📞 *Phone:* " + clientPhone + "\n" +
+                            "📅 *Date:* " + eventDate + "\n" +
+                            "👥 *Servings:* " + guestCount + " item(s)\n" +
+                            "🍰 *Flavor:* " + chosenFlavor + "\n" +
+                            "📝 *Details:* " + designDetails;
+
+            // Secure web routing path aimed directly at your test number
             const whatsappUrl = "https://wa.me" + encodeURIComponent(message);
+            
+            // Forces the device to immediately navigate to the generated link
             window.location.href = whatsappUrl;
         }
 
+        // Mobile dropdown toggle code
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navMenu = document.getElementById('navMenu');
 
@@ -231,6 +242,5 @@
             });
         }
     </script>
-
 </body>
 </html>
